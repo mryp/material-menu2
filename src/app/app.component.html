@@ -1,8 +1,8 @@
 <md-sidenav-container>
-  <md-sidenav #sidenav class="sidenavi-menu">
+  <md-sidenav #sidenav mode="{{sidenaviMode}}" opened="{{sidenaviOpened}}" class="sidenavi-menu">
     <md-nav-list class="sidenavi-menu-list">
       <md-toolbar color="primary" class="shadow-toolbar">
-        <button md-icon-button (click)="sideNaviToggle()">
+        <button *ngIf="sidenaviIconVisible" md-icon-button (click)="sideNaviToggle()">
           <md-icon>arrow_back</md-icon>
         </button>
         <span>メニュー</span>
@@ -17,7 +17,7 @@
   <div class="container-root">
     <div class="container-header">
       <md-toolbar color="primary" class="shadow-toolbar">
-        <button md-icon-button (click)="sideNaviToggle()">
+        <button *ngIf="sidenaviIconVisible" md-icon-button (click)="sideNaviToggle()">
           <md-icon>menu</md-icon>
         </button>
         <span>タイトル</span>
